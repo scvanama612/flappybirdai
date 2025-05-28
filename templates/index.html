@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird AI</title>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            if (event.code === "Space") {
+                fetch("/jump", {method: "POST"});
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Flappy Bird AI Game</h1>
+    <img src="{{ url_for('video_feed') }}" width="400" height="600">
+    <h2>Neural Network Visualization</h2>
+    <img src="data:image/png;base64,{{ nn_image }}" alt="Neural Network">
+</body>
+</html>
